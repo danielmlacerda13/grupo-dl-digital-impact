@@ -16,6 +16,13 @@ const Admin = () => {
   const { user, signOut, loading: authLoading } = useAuth();
   const { isAdmin, loading: adminLoading } = useIsAdmin();
 
+  console.log("Admin Component - State:", { 
+    user: user?.id, 
+    isAdmin, 
+    authLoading, 
+    adminLoading 
+  });
+
   useEffect(() => {
     if (!authLoading && !user) {
       navigate("/auth");
@@ -23,9 +30,18 @@ const Admin = () => {
   }, [user, authLoading, navigate]);
 
   useEffect(() => {
+    console.log("Admin useEffect - Checking redirect conditions:", {
+      authLoading,
+      adminLoading,
+      user: !!user,
+      isAdmin,
+      shouldRedirect: !authLoading && !adminLoading && user && !isAdmin
+    });
+
     // Só redireciona se não estiver carregando E não for admin E tiver usuário
     // Garante que o estado foi completamente atualizado antes de redirecionar
     if (!authLoading && !adminLoading && user && !isAdmin) {
+      console.log("Admin: Redirecting - not admin");
       toast.error("Você não tem permissão para acessar esta página");
       navigate("/");
     }
