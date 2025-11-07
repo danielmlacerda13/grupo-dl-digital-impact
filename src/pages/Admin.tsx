@@ -36,6 +36,7 @@ const Admin = () => {
     navigate("/");
   };
 
+  // Mostra loading enquanto verifica autenticação e permissões
   if (authLoading || adminLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -44,7 +45,9 @@ const Admin = () => {
     );
   }
 
-  if (!isAdmin) {
+  // Se não está mais carregando e não é admin, não renderiza nada
+  // (o useEffect vai redirecionar)
+  if (!authLoading && !adminLoading && !isAdmin) {
     return null;
   }
 
