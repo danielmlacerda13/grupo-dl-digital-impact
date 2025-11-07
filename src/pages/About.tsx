@@ -77,15 +77,15 @@ const About = () => {
 
           <div className="mb-20 rounded-lg p-12 bg-gradient-to-r from-secondary via-background to-secondary">
             <h2 className="text-4xl font-bold text-center mb-12 text-primary">Empresas do Grupo DL</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center max-w-5xl mx-auto">
               <div className="flex justify-center">
-                <img src={logoSistemas} alt="DL Sistemas" className="max-w-full h-auto" />
+                <img src={logoSistemas} alt="DL Sistemas" className="max-w-[280px] h-auto" />
               </div>
               <div className="flex justify-center">
-                <img src={logoConsultoria} alt="DL Consultoria Empresarial" className="max-w-full h-auto" />
+                <img src={logoConsultoria} alt="DL Consultoria Empresarial" className="max-w-[280px] h-auto" />
               </div>
               <div className="flex justify-center">
-                <img src={logoContabilidade} alt="DL Contabilidade" className="max-w-full h-auto" />
+                <img src={logoContabilidade} alt="DL Contabilidade" className="max-w-[280px] h-auto" />
               </div>
             </div>
           </div>
