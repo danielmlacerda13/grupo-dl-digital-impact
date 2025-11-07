@@ -25,27 +25,10 @@ const Admin = () => {
 
   useEffect(() => {
     if (!authLoading && !user) {
+      console.log("Admin: Redirecting - no user");
       navigate("/auth");
     }
   }, [user, authLoading, navigate]);
-
-  useEffect(() => {
-    console.log("Admin useEffect - Checking redirect conditions:", {
-      authLoading,
-      adminLoading,
-      user: !!user,
-      isAdmin,
-      shouldRedirect: !authLoading && !adminLoading && user && !isAdmin
-    });
-
-    // Só redireciona se não estiver carregando E não for admin E tiver usuário
-    // Garante que o estado foi completamente atualizado antes de redirecionar
-    if (!authLoading && !adminLoading && user && !isAdmin) {
-      console.log("Admin: Redirecting - not admin");
-      toast.error("Você não tem permissão para acessar esta página");
-      navigate("/");
-    }
-  }, [isAdmin, adminLoading, authLoading, user, navigate]);
 
   const handleSignOut = async () => {
     await signOut();
@@ -61,10 +44,20 @@ const Admin = () => {
     );
   }
 
-  // Se não está mais carregando e não é admin, não renderiza nada
-  // (o useEffect vai redirecionar)
-  if (!authLoading && !adminLoading && !isAdmin) {
+  // Se não tem usuário, redireciona para auth (já tratado no useEffect)
+  if (!user) {
     return null;
+  }
+
+  // Se não é admin, mostra mensagem de acesso negado
+  if (!isAdmin) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center">
+        <h1 className="text-2xl font-bold text-primary mb-4">Acesso Negado</h1>
+        <p className="text-muted-foreground mb-8">Você não tem permissão para acessar esta página.</p>
+        <Button onClick={() => navigate("/")}>Voltar para Home</Button>
+      </div>
+    );
   }
 
   return (
