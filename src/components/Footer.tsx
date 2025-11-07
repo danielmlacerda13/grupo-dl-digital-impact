@@ -54,6 +54,14 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm text-primary-foreground/60">
           <p>&copy; {new Date().getFullYear()} Grupo DL - Soluções em Negócios. Todos os direitos reservados.</p>
+          <Link 
+            to="/auth" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-2 text-xs opacity-40 hover:opacity-100 transition-opacity"
+          >
+            Acesso Interno
+          </Link>
         </div>
       </div>
     </footer>
