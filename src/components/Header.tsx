@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAzul from "@/assets/logo-azul.png";
+import { useIsAdmin } from "@/hooks/useIsAdmin";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { isAdmin } = useIsAdmin();
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -40,6 +42,17 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+            {isAdmin && (
+              <Link
+                to="/admin"
+                className={`flex items-center gap-2 text-sm font-medium transition-colors hover:text-accent ${
+                  isActive("/admin") ? "text-accent" : "text-foreground"
+                }`}
+              >
+                <Settings size={16} />
+                Admin
+              </Link>
+            )}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -68,6 +81,18 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+            {isAdmin && (
+              <Link
+                to="/admin"
+                className={`flex items-center gap-2 py-3 text-sm font-medium transition-colors hover:text-accent ${
+                  isActive("/admin") ? "text-accent" : "text-foreground"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Settings size={16} />
+                Admin
+              </Link>
+            )}
           </nav>
         )}
       </div>
