@@ -46,5 +46,6 @@ export const useIsAdmin = () => {
     checkAdmin();
   }, [user]);
 
+  console.log("useIsAdmin RETURN:", { isAdmin, loading, userId: user?.id });
   return { isAdmin, loading };
 };

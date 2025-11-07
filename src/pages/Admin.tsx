@@ -16,26 +16,27 @@ const Admin = () => {
   const { user, signOut, loading: authLoading } = useAuth();
   const { isAdmin, loading: adminLoading } = useIsAdmin();
 
-  console.log("Admin Component - State:", { 
+  console.log("=== ADMIN COMPONENT ===", { 
     user: user?.id, 
     isAdmin, 
     authLoading, 
-    adminLoading 
+    adminLoading,
+    willShowAccessDenied: !authLoading && !adminLoading && user && !isAdmin
   });
-
-  useEffect(() => {
-    if (!authLoading && !user) {
-      console.log("Admin: Redirecting - no user");
-      navigate("/auth");
-    }
-  }, [user, authLoading, navigate]);
 
   const handleSignOut = async () => {
     await signOut();
     navigate("/");
   };
 
-  // Mostra loading enquanto verifica autenticação e permissões
+  // Redireciona para login se não tiver usuário
+  useEffect(() => {
+    if (!authLoading && !user) {
+      navigate("/auth");
+    }
+  }, [user, authLoading, navigate]);
+
+  // Aguarda o carregamento completo
   if (authLoading || adminLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -44,12 +45,12 @@ const Admin = () => {
     );
   }
 
-  // Se não tem usuário, redireciona para auth (já tratado no useEffect)
+  // Se não tem usuário, não renderiza nada (useEffect vai redirecionar)
   if (!user) {
     return null;
   }
 
-  // Se não é admin, mostra mensagem de acesso negado
+  // Se não é admin, mostra mensagem
   if (!isAdmin) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">
