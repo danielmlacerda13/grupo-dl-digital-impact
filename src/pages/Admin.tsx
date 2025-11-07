@@ -23,11 +23,13 @@ const Admin = () => {
   }, [user, authLoading, navigate]);
 
   useEffect(() => {
-    if (!adminLoading && !isAdmin && user) {
+    // Só redireciona se não estiver carregando E não for admin E tiver usuário
+    // Garante que o estado foi completamente atualizado antes de redirecionar
+    if (!authLoading && !adminLoading && user && !isAdmin) {
       toast.error("Você não tem permissão para acessar esta página");
       navigate("/");
     }
-  }, [isAdmin, adminLoading, user, navigate]);
+  }, [isAdmin, adminLoading, authLoading, user, navigate]);
 
   const handleSignOut = async () => {
     await signOut();
