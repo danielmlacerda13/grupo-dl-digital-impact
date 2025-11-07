@@ -9,6 +9,7 @@ export const useIsAdmin = () => {
 
   useEffect(() => {
     if (!user) {
+      console.log("useIsAdmin: No user found");
       setIsAdmin(false);
       setLoading(false);
       return;
@@ -16,6 +17,7 @@ export const useIsAdmin = () => {
 
     const checkAdmin = async () => {
       try {
+        console.log("useIsAdmin: Checking admin status for user:", user.id);
         const { data, error } = await supabase
           .from("user_roles")
           .select("role")
@@ -23,14 +25,18 @@ export const useIsAdmin = () => {
           .eq("role", "admin")
           .maybeSingle();
 
+        console.log("useIsAdmin: Query result:", { data, error });
+
         if (error) {
-          console.error("Error checking admin status:", error);
+          console.error("useIsAdmin: Error checking admin status:", error);
           setIsAdmin(false);
         } else {
-          setIsAdmin(!!data);
+          const adminStatus = !!data;
+          console.log("useIsAdmin: Admin status:", adminStatus);
+          setIsAdmin(adminStatus);
         }
       } catch (error) {
-        console.error("Error checking admin status:", error);
+        console.error("useIsAdmin: Exception checking admin status:", error);
         setIsAdmin(false);
       } finally {
         setLoading(false);
