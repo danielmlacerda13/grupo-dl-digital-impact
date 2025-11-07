@@ -56,27 +56,27 @@ const Services = () => {
       <section className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
 
-          <div className="space-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-2 border-accent/20 hover:border-accent transition-all hover:shadow-2xl shadow-lg overflow-hidden group">
+              <Card key={index} className="border-2 border-accent/20 hover:border-accent transition-all hover:shadow-2xl shadow-lg overflow-hidden group relative flex flex-col">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent/5 to-transparent rounded-full blur-3xl -z-10 group-hover:from-accent/10 transition-all"></div>
-                <CardHeader className="bg-gradient-to-r from-primary/5 to-transparent">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center shadow-md">
-                      <service.icon className="text-accent-foreground" size={32} />
+                <CardHeader className="bg-gradient-to-b from-primary/5 to-transparent">
+                  <div className="flex flex-col items-center text-center gap-4 mb-4">
+                    <div className="w-20 h-20 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center shadow-md">
+                      <service.icon className="text-accent-foreground" size={36} />
                     </div>
                     <div>
-                      <CardTitle className="text-3xl text-primary">{service.title}</CardTitle>
-                      <p className="text-muted-foreground mt-2">{service.description}</p>
+                      <CardTitle className="text-2xl text-primary mb-2">{service.title}</CardTitle>
+                      <p className="text-muted-foreground text-sm">{service.description}</p>
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-6">
-                  <div className="grid md:grid-cols-2 gap-4">
+                <CardContent className="pt-6 flex-1">
+                  <div className="space-y-3">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start gap-3 p-2 rounded-md hover:bg-accent/5 transition-colors">
-                        <CheckCircle2 className="text-accent mt-1 flex-shrink-0" size={20} />
-                        <span className="text-muted-foreground">{feature}</span>
+                        <CheckCircle2 className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                        <span className="text-muted-foreground text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>

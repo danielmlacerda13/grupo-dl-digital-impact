@@ -38,7 +38,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2RjOWMwNCIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMSIvPjwvZz48L3N2Zz4=')] opacity-10"></div>
         <div className="container mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center text-primary-foreground">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-primary-foreground to-accent bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in text-primary-foreground">
               Transforme sua Gestão Empresarial
             </h1>
             <p className="text-xl mb-8 text-primary-foreground/90 animate-fade-in">
