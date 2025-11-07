@@ -31,53 +31,57 @@ const About = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-32 pb-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 animate-fade-in">Sobre o Grupo DL</h1>
+            <h1 className="text-5xl font-bold mb-6 animate-fade-in text-primary">Sobre o Grupo DL</h1>
             <p className="text-xl text-muted-foreground animate-fade-in">
               Somos especialistas em transformar desafios empresariais em oportunidades de crescimento.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 mb-20">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold">Nossa História</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                O Grupo DL nasceu da visão de transformar a forma como empresas gerenciam seus negócios. 
-                Com anos de experiência no mercado, consolidamos nossa posição como referência em soluções 
-                empresariais integradas.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Hoje, atendemos empresas de diversos portes e segmentos, oferecendo consultoria estratégica, 
-                software de gestão e serviços contábeis de excelência.
-              </p>
-            </div>
+            <Card className="border-none shadow-lg bg-gradient-to-br from-card to-secondary p-8">
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-primary">Nossa História</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  O Grupo DL nasceu da visão de transformar a forma como empresas gerenciam seus negócios. 
+                  Com anos de experiência no mercado, consolidamos nossa posição como referência em soluções 
+                  empresariais integradas.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Hoje, atendemos empresas de diversos portes e segmentos, oferecendo consultoria estratégica, 
+                  software de gestão e serviços contábeis de excelência.
+                </p>
+              </div>
+            </Card>
 
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold">Nossa Missão</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Capacitar empresas a alcançarem seu máximo potencial através de soluções inovadoras em 
-                gestão empresarial, proporcionando crescimento sustentável e competitividade no mercado.
-              </p>
-              <h3 className="text-2xl font-bold mt-8">Nossa Visão</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Ser reconhecido como o principal parceiro estratégico em gestão empresarial, 
-                referência em inovação e excelência no atendimento.
-              </p>
-            </div>
+            <Card className="border-none shadow-lg bg-gradient-to-br from-primary to-primary-light text-primary-foreground p-8">
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold">Nossa Missão</h2>
+                <p className="leading-relaxed opacity-90">
+                  Capacitar empresas a alcançarem seu máximo potencial através de soluções inovadoras em 
+                  gestão empresarial, proporcionando crescimento sustentável e competitividade no mercado.
+                </p>
+                <h3 className="text-2xl font-bold mt-8">Nossa Visão</h3>
+                <p className="leading-relaxed opacity-90">
+                  Ser reconhecido como o principal parceiro estratégico em gestão empresarial, 
+                  referência em inovação e excelência no atendimento.
+                </p>
+              </div>
+            </Card>
           </div>
 
           <div className="mb-16">
-            <h2 className="text-4xl font-bold text-center mb-12">Nossos Valores</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 text-primary">Nossos Valores</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value, index) => (
-                <Card key={index} className="border-2 hover:border-accent transition-all hover:shadow-lg">
+                <Card key={index} className="border-2 border-accent/20 hover:border-accent transition-all hover:shadow-xl hover:-translate-y-2 duration-300 group">
                   <CardContent className="pt-8 pb-6 text-center">
-                    <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <value.icon className="text-accent" size={32} />
+                    <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center mx-auto mb-4 shadow-md group-hover:shadow-lg transition-shadow">
+                      <value.icon className="text-accent-foreground" size={32} />
                     </div>
-                    <h3 className="text-xl font-bold mb-3">{value.title}</h3>
+                    <h3 className="text-xl font-bold mb-3 text-primary">{value.title}</h3>
                     <p className="text-muted-foreground">{value.description}</p>
                   </CardContent>
                 </Card>
