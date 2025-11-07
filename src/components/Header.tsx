@@ -1,14 +1,22 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Settings } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X, Settings, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoAzul from "@/assets/logo-azul.png";
 import { useIsAdmin } from "@/hooks/useIsAdmin";
+import { useAuth } from "@/hooks/useAuth";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { isAdmin } = useIsAdmin();
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate("/");
+  };
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -53,6 +61,17 @@ const Header = () => {
                 Admin
               </Link>
             )}
+            {user && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleSignOut}
+                className="text-sm font-medium"
+              >
+                <LogOut size={16} className="mr-2" />
+                Sair
+              </Button>
+            )}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -92,6 +111,18 @@ const Header = () => {
                 <Settings size={16} />
                 Admin
               </Link>
+            )}
+            {user && (
+              <button
+                onClick={() => {
+                  handleSignOut();
+                  setIsMenuOpen(false);
+                }}
+                className="flex items-center gap-2 py-3 text-sm font-medium transition-colors hover:text-accent"
+              >
+                <LogOut size={16} />
+                Sair
+              </button>
             )}
           </nav>
         )}
