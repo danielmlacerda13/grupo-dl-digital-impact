@@ -2,6 +2,10 @@ import { Award, Users, Target, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHeader from "@/components/PageHeader";
+import logoSistemas from "@/assets/logo-sistemas.png";
+import logoConsultoria from "@/assets/logo-consultoria.png";
+import logoContabilidade from "@/assets/logo-contabilidade.png";
 
 const About = () => {
   const values = [
@@ -31,25 +35,24 @@ const About = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-secondary/30">
+      <PageHeader 
+        title="Sobre o Grupo DL"
+        subtitle="Somos especialistas em transformar desafios empresariais em oportunidades de crescimento."
+      />
+      
+      <section className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 animate-fade-in text-primary">Sobre o Grupo DL</h1>
-            <p className="text-xl text-muted-foreground animate-fade-in">
-              Somos especialistas em transformar desafios empresariais em oportunidades de crescimento.
-            </p>
-          </div>
 
           <div className="grid md:grid-cols-2 gap-12 mb-20">
-            <Card className="border-none shadow-lg bg-gradient-to-br from-card to-secondary p-8">
+            <Card className="border-none shadow-lg p-8" style={{ background: 'var(--gradient-primary)' }}>
               <div className="space-y-6">
-                <h2 className="text-3xl font-bold text-primary">Nossa História</h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <h2 className="text-3xl font-bold text-primary-foreground">Nossa História</h2>
+                <p className="text-primary-foreground/90 leading-relaxed">
                   O Grupo DL nasceu da visão de transformar a forma como empresas gerenciam seus negócios. 
                   Com anos de experiência no mercado, consolidamos nossa posição como referência em soluções 
                   empresariais integradas.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-primary-foreground/90 leading-relaxed">
                   Hoje, atendemos empresas de diversos portes e segmentos, oferecendo consultoria estratégica, 
                   software de gestão e serviços contábeis de excelência.
                 </p>
@@ -63,13 +66,28 @@ const About = () => {
                   Capacitar empresas a alcançarem seu máximo potencial através de soluções inovadoras em 
                   gestão empresarial, proporcionando crescimento sustentável e competitividade no mercado.
                 </p>
-                <h3 className="text-2xl font-bold mt-8">Nossa Visão</h3>
+                <h2 className="text-3xl font-bold mt-8">Nossa Visão</h2>
                 <p className="leading-relaxed opacity-90">
                   Ser reconhecido como o principal parceiro estratégico em gestão empresarial, 
                   referência em inovação e excelência no atendimento.
                 </p>
               </div>
             </Card>
+          </div>
+
+          <div className="mb-20 rounded-lg p-12 bg-gradient-to-r from-secondary via-background to-secondary">
+            <h2 className="text-4xl font-bold text-center mb-12 text-primary">Empresas do Grupo DL</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center max-w-6xl mx-auto">
+              <div className="flex justify-center">
+                <img src={logoSistemas} alt="DL Sistemas" className="max-w-full h-auto" />
+              </div>
+              <div className="flex justify-center">
+                <img src={logoConsultoria} alt="DL Consultoria Empresarial" className="max-w-full h-auto" />
+              </div>
+              <div className="flex justify-center">
+                <img src={logoContabilidade} alt="DL Contabilidade" className="max-w-full h-auto" />
+              </div>
+            </div>
           </div>
 
           <div className="mb-16">

@@ -2,6 +2,7 @@ import { Quote, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHeader from "@/components/PageHeader";
 
 const Testimonials = () => {
   const testimonials = [
@@ -53,14 +54,13 @@ const Testimonials = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-secondary/30">
+      <PageHeader 
+        title="Depoimentos"
+        subtitle="Veja o que nossos clientes têm a dizer sobre nossos serviços."
+      />
+      
+      <section className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 animate-fade-in text-primary">Depoimentos</h1>
-            <p className="text-xl text-muted-foreground animate-fade-in">
-              Veja o que nossos clientes têm a dizer sobre nossos serviços.
-            </p>
-          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (

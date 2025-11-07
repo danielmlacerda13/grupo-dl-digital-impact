@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHeader from "@/components/PageHeader";
 import { Building2 } from "lucide-react";
 
 const Clients = () => {
@@ -10,14 +11,13 @@ const Clients = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-secondary/30">
+      <PageHeader 
+        title="Nossos Clientes"
+        subtitle="Orgulhamo-nos de fazer parte do sucesso de empresas de diversos segmentos."
+      />
+      
+      <section className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 animate-fade-in text-primary">Nossos Clientes</h1>
-            <p className="text-xl text-muted-foreground animate-fade-in">
-              Orgulhamo-nos de fazer parte do sucesso de empresas de diversos segmentos.
-            </p>
-          </div>
 
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-12 text-primary">Empresas que Confiam em Nós</h2>

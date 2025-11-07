@@ -2,6 +2,7 @@ import { TrendingUp, Laptop, FileText, CheckCircle2 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHeader from "@/components/PageHeader";
 
 const Services = () => {
   const services = [
@@ -47,14 +48,13 @@ const Services = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-secondary/30">
+      <PageHeader 
+        title="Nossos Serviços"
+        subtitle="Soluções completas e integradas para impulsionar o crescimento do seu negócio."
+      />
+      
+      <section className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 animate-fade-in text-primary">Nossos Serviços</h1>
-            <p className="text-xl text-muted-foreground animate-fade-in">
-              Soluções completas e integradas para impulsionar o crescimento do seu negócio.
-            </p>
-          </div>
 
           <div className="space-y-12">
             {services.map((service, index) => (

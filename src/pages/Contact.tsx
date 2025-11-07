@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHeader from "@/components/PageHeader";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -16,14 +17,13 @@ const Contact = () => {
     <div className="min-h-screen">
       <Header />
       
-      <section className="pt-32 pb-20 px-4 bg-secondary/30">
+      <PageHeader 
+        title="Entre em Contato"
+        subtitle="Estamos prontos para atender suas necessidades. Entre em contato conosco!"
+      />
+      
+      <section className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold mb-6 animate-fade-in text-primary">Entre em Contato</h1>
-            <p className="text-xl text-muted-foreground animate-fade-in">
-              Estamos prontos para atender suas necessidades. Entre em contato conosco!
-            </p>
-          </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <Card className="border-2 border-accent/20 hover:border-accent transition-all hover:shadow-lg hover:-translate-y-1 duration-300 group">
