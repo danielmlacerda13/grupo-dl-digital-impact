@@ -44,7 +44,7 @@ const Home = () => {
             <p className="text-xl mb-8 text-primary-foreground/90 animate-fade-in">
               Soluções integradas, desenvolvidas por quem realmente entende de gestão e negócios!
               <br />
-              Uma empresa comprometida em gerar <span style="color: #F9BB1F; font-weight: bold">RESULTADOS!</span>
+              Uma empresa comprometida em gerar <span style={{ color: "#F9BB1F", fontWeight: "bold" }}>RESULTADOS!</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
               <Button
