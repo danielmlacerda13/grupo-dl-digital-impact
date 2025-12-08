@@ -9,7 +9,7 @@ const Home = () => {
   const features = [
     {
       icon: TrendingUp,
-      title: "Consultoria em Gestão de Negócios",
+      title: "Consultoria Empresarial",
       description: "Estratégias personalizadas para otimizar processos e aumentar a eficiência empresarial.",
     },
     {
