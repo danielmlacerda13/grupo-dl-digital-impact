@@ -9,23 +9,20 @@ const Home = () => {
   const features = [
     {
       icon: TrendingUp,
-      title: "Consultoria em Gestão",
+      title: "Consultoria em Gestão de Negócios",
       description: "Estratégias personalizadas para otimizar processos e aumentar a eficiência empresarial.",
     },
     {
       icon: Target,
       title: "Software de Gestão",
-      description: "Soluções tecnológicas integradas para controle total do seu negócio.",
+      description:
+        "Sistemas voltados para gestão empresarial pensados e desenvolvidos por quem realmente entende de negócios.",
     },
     {
       icon: Shield,
       title: "Serviços Contábeis",
-      description: "Compliance e gestão fiscal completa para sua empresa estar sempre em dia.",
-    },
-    {
-      icon: Users,
-      title: "Suporte Especializado",
-      description: "Time qualificado pronto para atender suas necessidades empresariais.",
+      description:
+        "Uma contabilidade que entrega tudo o que o empresário de fato precisa para operar com tranquilidade.",
     },
   ];
 
@@ -74,7 +71,7 @@ const Home = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-primary">Nossas Soluções</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Oferecemos um portfólio completo de serviços para impulsionar o crescimento do seu negócio.
+              Soluções completas em consultoria, software e contabilidade para levar seu negócio ao próximo nível.
             </p>
           </div>
 
