@@ -107,7 +107,7 @@ const Home = () => {
             size="lg"
             className="bg-accent hover:bg-accent-light text-accent-foreground shadow-lg hover:shadow-xl transition-all"
           >
-            <Link to="/contato">Solicite uma Consulta</Link>
+            <Link to="/contato">Solicite uma Proposta</Link>
           </Button>
         </div>
       </section>
