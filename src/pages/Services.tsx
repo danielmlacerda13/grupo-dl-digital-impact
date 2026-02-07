@@ -34,7 +34,7 @@ const Services = () => {
       description: "Contabilidade feita por contadores gestores, e não burocratas",
       features: [
         "Todos os departamentos (Fiscal, Pessoal, Contábil e Societário)",
-        "Planejamento tributário",
+        "Contabilidade perto de você, conte conosco sempre que precisar",
         "Cuidamos do seu negócio como se fosse nosso",
         "Contadores gestores que entendem a sua realidade como empresário",
       ],
