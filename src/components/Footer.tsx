@@ -17,10 +17,26 @@ const Footer = () => {
           <div>
             <h3 className="font-bold mb-4">Menu</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-sm hover:text-accent transition-colors">Home</Link></li>
-              <li><Link to="/sobre" className="text-sm hover:text-accent transition-colors">Sobre Nós</Link></li>
-              <li><Link to="/servicos" className="text-sm hover:text-accent transition-colors">Serviços</Link></li>
-              <li><Link to="/clientes" className="text-sm hover:text-accent transition-colors">Clientes</Link></li>
+              <li>
+                <Link to="/" className="text-sm hover:text-accent transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/sobre" className="text-sm hover:text-accent transition-colors">
+                  Sobre Nós
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicos" className="text-sm hover:text-accent transition-colors">
+                  Serviços
+                </Link>
+              </li>
+              <li>
+                <Link to="/clientes" className="text-sm hover:text-accent transition-colors">
+                  Clientes
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -38,15 +54,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm">
                 <Mail size={16} className="text-accent" />
-                <span>contato@grupodl.com.br</span>
+                <span>contato@dlcontabilidade.com</span>
               </li>
               <li className="flex items-center gap-2 text-sm">
                 <Phone size={16} className="text-accent" />
-                <span>(11) 9999-9999</span>
+                <span>(83) 99671-9907</span>
               </li>
               <li className="flex items-center gap-2 text-sm">
                 <MapPin size={16} className="text-accent" />
-                <span>São Paulo, SP</span>
+                <span>Campina Grande, PB</span>
               </li>
             </ul>
           </div>
@@ -54,8 +70,8 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-sm text-primary-foreground/60">
           <p>&copy; {new Date().getFullYear()} Grupo DL - Soluções em Negócios. Todos os direitos reservados.</p>
-          <Link 
-            to="/auth" 
+          <Link
+            to="/auth"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-2 text-xs opacity-40 hover:opacity-100 transition-opacity"
