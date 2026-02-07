@@ -9,56 +9,56 @@ const Services = () => {
     {
       icon: TrendingUp,
       title: "Consultoria em Gestão",
-      description: "Estratégias personalizadas para otimizar processos e resultados",
+      description: "Metodologias únicas para otimizar processos gerar resultados",
       features: [
         "Análise e diagnóstico empresarial",
         "Planejamento estratégico",
         "Gestão de processos e operações",
-        "Indicadores de performance (KPIs)",
-        "Gestão de mudanças organizacionais"
-      ]
+        "Gestão de mudanças organizacionais",
+      ],
     },
     {
       icon: Laptop,
       title: "Software de Gestão",
-      description: "Tecnologia de ponta para controle total do seu negócio",
+      description: "Sistemas desenvolvidos por quem realmente entende de negócios",
       features: [
-        "ERP integrado e customizável",
         "Gestão financeira completa",
-        "Controle de estoque e vendas",
-        "Business Intelligence e relatórios",
-        "Integração com sistemas existentes"
-      ]
+        "Controle de estoque e logística",
+        "Emissão de Documentos Fiscais",
+        "Relatórios que ajudam você na tomada de decisão",
+      ],
     },
     {
       icon: FileText,
       title: "Serviços Contábeis",
-      description: "Compliance e gestão fiscal completa para sua empresa",
+      description:
+        "Contabilidade perto de você, que lhe oferece tudo o que você realmente precisa e feita por contadores gestores, e não burocratas",
       features: [
-        "Escrituração contábil e fiscal",
-        "Departamento pessoal completo",
+        "Todos os departamentos (Fiscal, Pessoal, Contábil e Societário)",
         "Planejamento tributário",
-        "Compliance e governança",
-        "Consultoria fiscal especializada"
-      ]
-    }
+        "Cuidamos do seu negócio como se fosse nosso",
+        "Contadores gestores que entendem a sua realidade como empresário",
+      ],
+    },
   ];
 
   return (
     <div className="min-h-screen">
       <Header />
-      
-      <PageHeader 
+
+      <PageHeader
         title="Nossos Serviços"
         subtitle="Soluções completas e integradas para impulsionar o crescimento do seu negócio."
       />
-      
+
       <section className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-2 border-accent/20 hover:border-accent transition-all hover:shadow-2xl shadow-lg overflow-hidden group relative flex flex-col">
+              <Card
+                key={index}
+                className="border-2 border-accent/20 hover:border-accent transition-all hover:shadow-2xl shadow-lg overflow-hidden group relative flex flex-col"
+              >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent/5 to-transparent rounded-full blur-3xl -z-10 group-hover:from-accent/10 transition-all"></div>
                 <CardHeader className="bg-gradient-to-b from-primary/5 to-transparent">
                   <div className="flex flex-col items-center text-center gap-4 mb-4">
@@ -74,7 +74,10 @@ const Services = () => {
                 <CardContent className="pt-6 flex-1">
                   <div className="space-y-3">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3 p-2 rounded-md hover:bg-accent/5 transition-colors">
+                      <div
+                        key={idx}
+                        className="flex items-start gap-3 p-2 rounded-md hover:bg-accent/5 transition-colors"
+                      >
                         <CheckCircle2 className="text-accent mt-0.5 flex-shrink-0" size={18} />
                         <span className="text-muted-foreground text-sm">{feature}</span>
                       </div>
@@ -85,13 +88,20 @@ const Services = () => {
             ))}
           </div>
 
-          <div className="mt-20 text-center rounded-lg p-12 relative overflow-hidden shadow-xl" style={{ background: 'var(--gradient-primary)' }}>
+          <div
+            className="mt-20 text-center rounded-lg p-12 relative overflow-hidden shadow-xl"
+            style={{ background: "var(--gradient-primary)" }}
+          >
             <div className="relative z-10">
               <h2 className="text-3xl font-bold mb-4 text-primary-foreground">Precisa de uma Solução Personalizada?</h2>
               <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-                Cada empresa é única. Entre em contato conosco para desenvolvermos uma solução sob medida para o seu negócio.
+                Cada empresa é única. Entre em contato conosco para desenvolvermos uma solução sob medida para o seu
+                negócio.
               </p>
-              <a href="/contato" className="inline-block bg-accent text-accent-foreground px-8 py-3 rounded-md font-medium hover:bg-accent-light shadow-lg hover:shadow-xl transition-all">
+              <a
+                href="/contato"
+                className="inline-block bg-accent text-accent-foreground px-8 py-3 rounded-md font-medium hover:bg-accent-light shadow-lg hover:shadow-xl transition-all"
+              >
                 Solicitar Orçamento
               </a>
             </div>
