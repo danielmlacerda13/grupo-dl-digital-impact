@@ -16,15 +16,14 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      
-      <PageHeader 
+
+      <PageHeader
         title="Entre em Contato"
         subtitle="Estamos prontos para atender suas necessidades. Entre em contato conosco!"
       />
-      
+
       <section className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto">
-
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <Card className="border-2 border-accent/20 hover:border-accent transition-all hover:shadow-lg hover:-translate-y-1 duration-300 group">
               <CardContent className="pt-8 pb-6 text-center">
@@ -32,7 +31,7 @@ const Contact = () => {
                   <Mail className="text-accent-foreground" size={32} />
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-primary">E-mail</h3>
-                <p className="text-muted-foreground">contato@grupodl.com.br</p>
+                <p className="text-muted-foreground">contato@dlcontabilidade.com</p>
               </CardContent>
             </Card>
 
@@ -41,8 +40,8 @@ const Contact = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent-light rounded-full flex items-center justify-center mx-auto mb-4 shadow-md group-hover:shadow-lg transition-shadow">
                   <Phone className="text-accent-foreground" size={32} />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-primary">Telefone</h3>
-                <p className="text-muted-foreground">(11) 9999-9999</p>
+                <h3 className="text-xl font-bold mb-2 text-primary">WhatsApp</h3>
+                <p className="text-muted-foreground">(83) 99671-9907</p>
               </CardContent>
             </Card>
 
@@ -52,7 +51,7 @@ const Contact = () => {
                   <MapPin className="text-accent-foreground" size={32} />
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-primary">Localização</h3>
-                <p className="text-muted-foreground">São Paulo, SP</p>
+                <p className="text-muted-foreground">Campina Grande - PB</p>
               </CardContent>
             </Card>
           </div>
@@ -90,14 +89,14 @@ const Contact = () => {
 
                 <div>
                   <label className="block text-sm font-medium mb-2">Mensagem</label>
-                  <Textarea 
-                    placeholder="Descreva suas necessidades..." 
-                    rows={6}
-                    required 
-                  />
+                  <Textarea placeholder="Descreva suas necessidades..." rows={6} required />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent-light shadow-lg hover:shadow-xl transition-all">
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-accent hover:bg-accent-light shadow-lg hover:shadow-xl transition-all"
+                >
                   Enviar Mensagem <Send className="ml-2" size={20} />
                 </Button>
               </form>
