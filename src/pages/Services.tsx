@@ -13,8 +13,8 @@ const Services = () => {
       features: [
         "Análise e diagnóstico empresarial",
         "Planejamento estratégico",
+        "Gestão financeira orientada a resultados",
         "Gestão de processos e operações",
-        "Gestão de mudanças organizacionais",
       ],
     },
     {
@@ -31,8 +31,7 @@ const Services = () => {
     {
       icon: FileText,
       title: "Serviços Contábeis",
-      description:
-        "Contabilidade perto de você, que lhe oferece tudo o que você realmente precisa e feita por contadores gestores, e não burocratas",
+      description: "Contabilidade feita por contadores gestores, e não burocratas",
       features: [
         "Todos os departamentos (Fiscal, Pessoal, Contábil e Societário)",
         "Planejamento tributário",
